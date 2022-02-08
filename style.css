@@ -37,6 +37,7 @@ section {
     margin-left: 34px;
     margin-right: auto;
     margin-bottom: auto;
+
 }
 
 .container-carta {
@@ -46,10 +47,11 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+
 }
 
 .carta {
-    position: relative ;
+    position: relative;
 
     margin-right: 34px;
     margin-bottom: 34px;
@@ -58,14 +60,25 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
     background: #A7E9AF;
     border: 1px solid #99CEA8;
     box-sizing: border-box;
     border-radius: 5px;
+    transition: all .5s;
+}
 
+.face {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    transition: all .5s;
     transform-style: preserve-3d;
-    transition: 0.3s;
+    left: 0px;
+    margin-top: 10px;
 }
 
 .carta img {
@@ -75,26 +88,37 @@ section {
     height: 100px;
 }
 
-.carta:active{
+.gif img {}
+
+.carta:active {
     transform: scale(0.97);
+
 }
 
-.carta.flip{
+.carta.flip {
     transform: rotateY(180deg);
 }
 
-.front-face, .back-face{
+.front-face, .back-face {
     padding: 10px;
     width: 100%;
     height: 100%;
     position: absolute;
 }
 
-.front-face{
-    transform: rotateY(180deg);
+.back-face {
+    transform: rotateY(0deg);
 }
-.escondido{
-    display: none;
+
+.back-face img {
+    width: 10%;
+
+}
+
+.front-face {
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+
 }
 
 /* ---------- Mobile ---------- */
